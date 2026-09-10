@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ian Franco-Razon — Arquitecto · Portafolio</title>
+<meta name="description" content="Portafolio de Ian Franco-Razon, arquitecto. Diseño residencial, desarrollos verticales y arquitectura con arte y función. Guadalajara, Jalisco.">
+<meta name="theme-color" content="#F4EEE2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Hanken+Grotesk:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ============ Variables — atelier papel · Bauhaus ============ */
+:root{
+  --paper:#F4EEE2;
+  --paper-2:#ECE4D4;
+  --paper-3:#E2D8C3;
+  --ink:#27211A;
+  --ink-70:rgba(39,33,26,.72);
+  --ink-45:rgba(39,33,26,.45);
+  --line:rgba(39,33,26,.15);
+  --line-strong:rgba(39,33,26,.38);
+  --acc:#B65318;
+  --acc-soft:#DE8A4A;
+  --acc-dim:rgba(182,83,24,.4);
+  --sepia:#8B7355;
+  --cream:#F4EEE2;
+  --panel:#26201A;
+  --disp:'Jost',sans-serif;
+  --sans:'Hanken Grotesk',sans-serif;
+  --mono:'Space Mono',monospace;
+  --pad:clamp(20px,4.5vw,72px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background-image:
+    linear-gradient(rgba(39,33,26,.026) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(39,33,26,.026) 1px,transparent 1px),
+    linear-gradient(rgba(39,33,26,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(39,33,26,.05) 1px,transparent 1px);
+  background-size:9px 9px,9px 9px,90px 90px,90px 90px;
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.06;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+::selection{background:var(--acc);color:var(--cream)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--paper-2)}
+::-webkit-scrollbar-thumb{background:#C9BCA4;border:2px solid var(--paper-2);border-radius:99px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;background:none;border:none;color:inherit;cursor:pointer}
+:focus-visible{outline:1.5px solid var(--acc);outline-offset:3px}
+section{scroll-margin-top:76px}
+.wrap{max-width:1400px;margin:0 auto;padding-inline:var(--pad)}
+
+.ph{filter:sepia(.18) saturate(.8) contrast(1.03) brightness(.97);transition:filter .8s cubic-bezier(.2,.7,.2,1)}
+a:hover .ph,.work:hover .ph,.warm-on:hover .ph{filter:sepia(0) saturate(1) contrast(1) brightness(1)}
+
+/* ============ Progreso de scroll (regla superior) ============ */
+.progress{position:fixed;top:0;left:0;right:0;height:5px;z-index:1100;pointer-events:none}
+.progress::before{
+  content:"";display:block;height:5px;
+  background:repeating-linear-gradient(90deg,var(--line-strong) 0 1px,transparent 1px 24px);
+}
+.progress .bar{position:absolute;top:0;left:0;height:5px;width:100%;background:var(--acc);transform:scaleX(0);transform-origin:left}
+
+/* ============ Regla lateral de elevación ============ */
+.ruler{position:fixed;right:14px;top:50%;transform:translateY(-50%);height:54vh;width:44px;z-index:500;font-family:var(--mono)}
+.ruler::before{content:"";position:absolute;right:16px;top:0;bottom:0;width:1px;background:var(--line-strong)}
+.r-t{position:absolute;right:16px;width:7px;height:1px;background:var(--line-strong)}
+.r-t.big{width:14px;background:var(--ink-45)}
+.r-n{position:absolute;right:34px;transform:translateY(-50%);font-size:7.5px;letter-spacing:.08em;color:var(--ink-45)}
+.r-mark{position:absolute;right:8px;left:0;height:2px;background:var(--acc);top:0;transition:top .15s linear}
+.r-mark::after{
+  content:"ELEV " attr(data-v);position:absolute;right:calc(100% + 10px);top:50%;transform:translateY(-50%);
+  font-size:7.5px;letter-spacing:.14em;color:var(--acc);white-space:nowrap;font-weight:700;
+}
+@media(max-width:1240px){.ruler{display:none}}
+
+/* ============ Cursor retícula fina ============ */
+@media (hover:hover) and (pointer:fine){
+  body{cursor:none}
+  a,button,.work,.svc-head{cursor:none}
+  input,textarea,select{cursor:auto}
+}
+.c-dot,.c-ring{display:none}
+@media (hover:hover) and (pointer:fine){
+  .c-dot{display:block;position:fixed;top:0;left:0;width:4px;height:4px;background:var(--acc);border-radius:50%;z-index:2600;pointer-events:none;transform:translate(-50%,-50%)}
+  .c-ring{
+    position:fixed;top:0;left:0;width:30px;height:30px;border:1px solid var(--acc-dim);
+    border-radius:50%;z-index:2599;pointer-events:none;transform:translate(-50%,-50%);
+    transition:width .35s,height .35s,border-color .35s,background .35s;
+  }
+  .c-ring.big{width:52px;height:52px;border-color:var(--acc);background:rgba(182,83,24,.07)}
+  .c-read{
+    position:fixed;top:0;left:0;z-index:2601;pointer-events:none;
+    font-family:var(--mono);font-size:8.5px;letter-spacing:.1em;color:var(--acc);
+    background:var(--paper);padding:2px 6px;border:1px solid var(--line);border-radius:3px;
+    transform:translate(14px,14px);white-space:nowrap;
+  }
+}
+
+/* ============ HUD lateral izquierdo ============ */
+.hud{
+  position:fixed;left:18px;top:50%;transform:translateY(-50%);
+  z-index:500;display:flex;flex-direction:column;align-items:center;gap:1rem;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--ink-45);
+  text-transform:uppercase;text-align:center;
+}
+.hud-mark{width:28px;height:28px;border:1px solid var(--line-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--acc);font-size:9px}
+.hud-rule{width:1px;height:48px;background:var(--line)}
+.hud-block{display:grid;gap:3px}
+.hud-block b{font-weight:400;color:var(--ink-70)}
+.hud-block .hud-live{color:var(--acc)}
+@media(max-width:1240px){.hud{display:none}}
+
+/* ============ Navegación ============ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1.05rem var(--pad);border-bottom:1px solid transparent;
+  transition:background .4s,border-color .4s,padding .4s;
+}
+.nav.scrolled{background:rgba(244,238,226,.88);backdrop-filter:blur(12px);border-color:var(--line);padding-block:.75rem}
+.brand{display:flex;align-items:center;gap:.8rem;font-family:var(--disp);font-weight:500;font-size:1.12rem;letter-spacing:.02em;text-transform:uppercase}
+.brand .chip{
+  width:27px;height:27px;border:1px solid var(--ink);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.58rem;color:var(--acc);
+  transition:transform .45s cubic-bezier(.2,.7,.2,1),border-color .35s;
+}
+.brand:hover .chip{transform:rotate(45deg);border-color:var(--acc)}
+.brand small{font-family:var(--mono);font-weight:400;font-size:.55rem;letter-spacing:.22em;color:var(--ink-45);text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;
+  display:flex;gap:.5rem;align-items:center;padding:.25rem 0;color:var(--ink-70);
+  position:relative;transition:color .3s;
+}
+.nav-links a i{font-style:normal;color:var(--acc);font-size:.55rem}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--acc);transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-links a.active{color:var(--ink)}
+.nav-links a.active::after{transform:scaleX(1)}
+.nav-cta{
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--acc);color:var(--acc);padding:.6rem 1.15rem;border-radius:999px;
+  transition:background .3s,color .3s;display:inline-block;
+}
+.nav-cta:hover{background:var(--acc);color:var(--cream)}
+.nav-clock{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--ink-45)}
+.burger{display:none;flex-direction:column;gap:5px;padding:6px 2px;z-index:950}
+.burger span{display:block;width:24px;height:1.5px;background:var(--ink)}
+.mobile-menu{
+  position:fixed;inset:0;z-index:940;background:var(--panel);color:var(--cream);
+  display:flex;flex-direction:column;justify-content:center;padding:var(--pad);
+  clip-path:inset(0 0 100% 0);transition:clip-path .6s cubic-bezier(.75,0,.2,1);
+}
+.mobile-menu.open{clip-path:inset(0 0 0 0)}
+.mobile-menu a{
+  font-family:var(--disp);font-weight:500;text-transform:uppercase;
+  font-size:clamp(1.9rem,8.5vw,3.1rem);letter-spacing:.02em;
+  padding:.55rem 0;border-bottom:1px solid rgba(244,238,226,.16);
+  display:flex;align-items:baseline;gap:1rem;
+}
+.mobile-menu a i{font-style:normal;font-family:var(--mono);font-weight:400;font-size:.65rem;color:var(--acc-soft)}
+.mm-foot{margin-top:2.6rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,238,226,.5)}
+.mm-close{position:absolute;top:1.1rem;right:var(--pad);color:var(--cream);padding:8px;font-family:var(--mono);font-size:.66rem;letter-spacing:.15em}
+
+/* ============ Reveal ============ */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+.reveal.in{opacity:1;transform:none}
+.rule{height:1px;background:var(--line-strong);transform:scaleX(0);transform-origin:left;transition:transform 1.3s cubic-bezier(.2,.7,.2,1) .1s}
+.rule.in{transform:scaleX(1)}
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01s!important;transition-duration:.01s!important}
+  html{scroll-behavior:auto}
+  .reveal,.rule,.h-in{opacity:1!important;transform:none!important}
+}
+
+/* ============ Encabezado de sección ============ */
+.sec-head{display:flex;align-items:baseline;gap:clamp(1rem,2.5vw,2rem);flex-wrap:wrap;margin-bottom:clamp(1.3rem,3vh,2rem)}
+.sec-tag{font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;color:var(--acc);border:1px solid var(--acc-dim);padding:.3rem .7rem;border-radius:999px}
+.sec-title{font-family:var(--disp);font-weight:500;font-size:clamp(2.2rem,4.8vw,4rem);text-transform:uppercase;letter-spacing:.005em;line-height:1}
+.sec-title em{font-style:normal;color:var(--acc)}
+.sec-note{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;color:var(--ink-45);text-transform:uppercase;margin-left:auto}
+.sec-cross{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8rem;color:var(--acc);margin-bottom:clamp(2rem,5vh,3.2rem);padding-top:.5rem}
+
+/* ============ Hero ============ */
+.hero{position:relative;overflow:hidden;padding-top:clamp(110px,15vh,170px);padding-bottom:clamp(30px,5vh,60px)}
+
+/* ---- Mapamundi sepia de fondo (siluetas realistas) ---- */
+.h-map{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.9}
+.h-map svg{width:100%;height:100%;display:block}
+.h-map .land path{
+  fill:var(--sepia);fill-opacity:.2;
+  stroke:var(--sepia);stroke-opacity:.5;stroke-width:.8;stroke-linejoin:round;
+}
+.h-map .grat line{stroke:var(--sepia);stroke-opacity:.16;stroke-width:.7}
+.h-map .eq{stroke:var(--sepia);stroke-opacity:.3;stroke-dasharray:5 5;stroke-width:.8}
+.h-map .maptxt{font-family:var(--mono);font-size:7.5px;letter-spacing:.16em;fill:var(--sepia);fill-opacity:.65}
+@media(max-width:760px){.h-map{opacity:.7}}
+
+/* ejes cartesianos que siguen el cursor */
+.guides{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;z-index:1}
+.guides.on{opacity:1}
+#gx{position:absolute;top:0;bottom:0;width:0;border-left:1px dashed rgba(182,83,24,.5)}
+#gy{position:absolute;left:0;right:0;height:0;border-top:1px dashed rgba(182,83,24,.5)}
+.guide-tag{position:absolute;font-family:var(--mono);font-size:8.5px;letter-spacing:.12em;color:var(--acc);background:var(--paper);padding:2px 7px;border:1px solid var(--acc-dim);border-radius:3px}
+#gxT{top:12px;transform:translateX(-50%)}
+#gyT{left:12px;transform:translateY(-50%)}
+.origin{
+  position:absolute;left:var(--pad);bottom:12px;z-index:1;pointer-events:none;
+  font-family:var(--mono);font-size:8px;letter-spacing:.14em;color:var(--ink-45);
+  display:flex;align-items:center;gap:.5rem;
+}
+.origin::before{content:"+";color:var(--acc);font-size:11px}
+
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1.05fr);gap:clamp(2.4rem,5vw,5rem);align-items:end;position:relative;z-index:2}
+.h-kicker{
+  display:flex;align-items:center;gap:1rem;margin-bottom:clamp(1.4rem,3vh,2.2rem);
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-70);
+}
+.h-kicker .dash{width:clamp(26px,5vw,60px);height:1.5px;background:var(--acc)}
+.hero-title{font-family:var(--disp);text-transform:uppercase;line-height:.96}
+.hero-title .h-l1{display:block;font-weight:700;font-size:clamp(3.4rem,11vw,10.2rem);letter-spacing:-.01em}
+.hero-title .h-l2{
+  display:block;font-weight:300;font-size:clamp(1.95rem,5.3vw,5.1rem);
+  letter-spacing:.05em;margin-left:clamp(1.4rem,6vw,5.5rem);margin-top:.1em;
+}
+.hero-title .deg{color:var(--acc)}
+.h-scale{display:flex;align-items:center;gap:1rem;margin-top:1.4rem}
+.h-scale .ticks{
+  width:170px;height:9px;
+  background:repeating-linear-gradient(90deg,var(--ink-45) 0 1px,transparent 1px 17px);
+  background-position:bottom;background-size:100% 6px;background-repeat:repeat-x;
+  position:relative;
+}
+.h-scale .ticks::before,.h-scale .ticks::after{content:"";position:absolute;bottom:0;width:1px;height:9px;background:var(--ink)}
+.h-scale .ticks::before{left:0}.h-scale .ticks::after{right:0}
+.h-scale .sl{font-family:var(--mono);font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45)}
+.h-scale .sl b{color:var(--acc);font-weight:400}
+.hero-sub{margin-top:clamp(1.6rem,3.5vh,2.4rem);max-width:46ch;color:var(--ink-70);font-size:clamp(.95rem,1.1vw,1.05rem);font-weight:300}
+.hero-sub strong{color:var(--ink);font-weight:500}
+.hero-sub .lim{font-family:var(--mono);font-size:.78em;letter-spacing:.14em;color:var(--acc)}
+.h-meta{margin-top:clamp(1.8rem,4vh,2.6rem);display:flex;flex-wrap:wrap;border-block:1px solid var(--line);background:rgba(244,238,226,.55);backdrop-filter:blur(2px)}
+.h-meta > div{padding:.9rem 1.6rem .9rem 0;margin-right:1.6rem;border-right:1px solid var(--line)}
+.h-meta > div:last-child{border-right:0;margin-right:0}
+.h-meta .k{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-45);margin-bottom:.3rem}
+.h-meta .v{font-family:var(--mono);font-size:.72rem;color:var(--ink)}
+.dot-a{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--acc);margin-right:.45rem;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.h-ctas{display:flex;gap:1rem;margin-top:clamp(1.8rem,4vh,2.5rem);flex-wrap:wrap}
+.btn{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  padding:.95rem 1.8rem;display:inline-flex;align-items:center;gap:.8rem;border-radius:999px;
+  transition:background .3s,color .3s,border-color .3s;
+}
+.btn svg{width:13px;height:13px}
+.btn-solid{background:var(--acc);color:var(--cream);border:1px solid var(--acc)}
+.btn-solid:hover{background:transparent;color:var(--acc)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--acc);color:var(--acc)}
+
+.h-fig{position:relative}
+/* hero frame ahora soporta múltiples imágenes en crossfade automático */
+.h-frame{position:relative;aspect-ratio:1/0.9;overflow:hidden;background:var(--paper-3);border:1px solid var(--line);border-radius:4px}
+.h-frame img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:scale(1.02);
+  transition:opacity 1.2s cubic-bezier(.2,.7,.2,1),transform 1.4s cubic-bezier(.2,.7,.2,1);
+}
+.h-frame img.on{opacity:1;transform:scale(1)}
+.h-xh{position:absolute;top:14px;left:14px;width:26px;height:26px;color:var(--acc);opacity:.85;z-index:2}
+.h-xh::before,.h-xh::after{content:"";position:absolute;background:currentColor}
+.h-xh::before{left:50%;top:0;bottom:0;width:1px}
+.h-xh::after{top:50%;left:0;right:0;height:1px}
+.h-tagfile{position:absolute;top:16px;right:13px;z-index:2;font-family:var(--mono);font-size:8px;letter-spacing:.12em;color:var(--ink);background:rgba(244,238,226,.85);padding:3px 8px;border-radius:3px}
+.h-side{
+  position:absolute;right:-14px;top:32%;transform:rotate(90deg);transform-origin:right top;
+  font-family:var(--mono);font-size:8.5px;letter-spacing:.24em;color:var(--ink-45);text-transform:uppercase;white-space:nowrap;
+}
+.h-cap{display:flex;justify-content:space-between;gap:1rem;margin-top:.75rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
+.h-cap b{font-weight:400;color:var(--acc)}
+
+.h-in{opacity:0;transform:translateY(26px)}
+body.booted .h-in{opacity:1;transform:none;transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1)}
+body.booted .h-in:nth-child(2){transition-delay:.1s}
+
+/* ============ Marquee ============ */
+.marquee{border-block:1px solid var(--line);overflow:hidden;padding:1rem 0;margin-top:clamp(2.4rem,6vh,4.2rem);position:relative;background:rgba(244,238,226,.4)}
+.marquee-track{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marquee span{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(1.15rem,1.9vw,1.5rem);letter-spacing:.06em;white-space:nowrap;padding:0 1.4rem}
+.marquee .sep{font-family:var(--mono);color:var(--acc);font-size:.7rem;align-self:center;padding:0}
+.marquee .hl{color:var(--acc)}
+
+/* ============ Secciones ============ */
+.section{padding-block:clamp(72px,12vh,140px)}
+
+/* ---- Sobre mí ---- */
+.mani{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(2.4rem,5vw,5.5rem)}
+.mani-text{font-family:var(--disp);font-weight:400;font-size:clamp(1.45rem,2.7vw,2.2rem);line-height:1.45;letter-spacing:.005em}
+.mani-text .hl{color:var(--acc);font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:.92em}
+.mani-text .dl{color:var(--acc);font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:.92em;border-bottom:1.5px dashed var(--acc-dim);padding-bottom:.04em}
+.mani-text .indent{display:block;margin-left:clamp(1.6rem,7vw,6rem);margin-top:1.1em}
+.mani-side{display:flex;flex-direction:column;gap:2.2rem}
+.mani-side > p{color:var(--ink-70);font-size:.92rem;max-width:40ch;font-weight:300}
+
+/* retrato */
+.portrait{position:relative;z-index:0;max-width:340px}
+.portrait::after{
+  content:"";position:absolute;inset:0;transform:translate(12px,12px);
+  border:1px solid var(--acc-dim);border-radius:4px;pointer-events:none;
+}
+.p-frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--paper-3);border:1px solid var(--line);border-radius:4px}
+.p-frame img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.portrait .w-br{opacity:1;border-color:var(--ink-45)}
+.portrait:hover .w-br{border-color:var(--acc)}
+.portrait:hover .ph{filter:sepia(0) saturate(1) contrast(1) brightness(1)}
+.p-tag{
+  position:absolute;top:11px;right:11px;font-family:var(--mono);font-size:8px;letter-spacing:.14em;
+  color:var(--ink);background:rgba(244,238,226,.85);padding:3px 8px;border-radius:3px;
+}
+.p-cap{display:flex;justify-content:space-between;gap:1rem;margin-top:.7rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45)}
+.p-cap b{font-weight:400;color:var(--acc)}
+
+.proto{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:rgba(244,238,226,.6)}
+.proto-h{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);padding:.75rem 1rem;border-bottom:1px solid var(--line)}
+.proto ol{list-style:none}
+.proto li{
+  font-family:var(--mono);font-size:.7rem;letter-spacing:.05em;padding:.75rem 1rem;
+  border-bottom:1px solid var(--line);display:flex;gap:.9rem;transition:background .3s,padding-left .3s;
+}
+.proto li:last-child{border-bottom:0}
+.proto li:hover{background:var(--paper-2);padding-left:1.4rem}
+.proto li i{font-style:normal;color:var(--acc)}
+
+.stats{display:flex;flex-wrap:wrap;margin-top:clamp(2.6rem,6vh,4rem);border-block:1px solid var(--line-strong)}
+.stat{flex:1 1 150px;padding:1.6rem 1.6rem 1.2rem 0;margin-right:1.6rem;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0;margin-right:0}
+.stat-n{font-family:var(--disp);font-weight:500;font-size:clamp(2.6rem,4.4vw,3.9rem);line-height:1;letter-spacing:0}
+.stat-n::after{content:"";display:inline-block;width:9px;height:9px;background:var(--acc);margin-left:.35rem}
+.stat-l{font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-45);margin-top:.55rem}
+.areas{margin-top:clamp(2.6rem,6vh,4rem)}
+.areas .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-45);margin-bottom:1rem}
+.areas-row{display:flex;flex-wrap:wrap;gap:.4rem 0;align-items:baseline}
+.areas-row span{font-family:var(--disp);font-weight:400;text-transform:uppercase;font-size:clamp(1rem,1.5vw,1.3rem);letter-spacing:.03em;white-space:nowrap;transition:color .3s}
+.areas-row span:hover{color:var(--acc)}
+.areas-row .sep{font-family:var(--mono);color:var(--acc);font-size:.65rem;padding:0 1rem;align-self:center}
+
+/* ---- Proyectos: fichas ---- */
+.works{border-top:1px solid var(--line-strong)}
+.work{
+  display:grid;grid-template-areas:"num info media specs arrow";
+  grid-template-columns:4.2rem minmax(0,1fr) 300px 175px 3.2rem;
+  gap:clamp(1.2rem,2.4vw,2.4rem);align-items:center;
+  padding:clamp(1.5rem,3vh,2rem) clamp(.4rem,1vw,1rem);
+  border-bottom:1px solid var(--line);position:relative;
+  transition:background .35s;outline-offset:-2px;
+}
+.work:hover{background:var(--paper-2)}
+.work::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--acc);transform:scaleY(0);transition:transform .4s cubic-bezier(.2,.7,.2,1);transform-origin:top}
+.work:hover::before{transform:scaleY(1)}
+.w-num{
+  grid-area:num;font-family:var(--disp);font-weight:500;font-size:2.9rem;line-height:1;
+  color:transparent;-webkit-text-stroke:1px var(--ink-45);transition:color .4s,-webkit-text-stroke .4s;
+}
+.work:hover .w-num{color:var(--acc);-webkit-text-stroke:1px var(--acc)}
+.w-info{grid-area:info;min-width:0}
+.w-name{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(1.3rem,2vw,1.8rem);letter-spacing:.015em;line-height:1.05;transition:transform .45s cubic-bezier(.2,.7,.2,1),color .3s}
+.work:hover .w-name{transform:translateX(10px);color:var(--acc)}
+.w-tags{font-family:var(--mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-45);margin-top:.5rem}
+.w-tags i{font-style:normal;color:var(--acc)}
+/* miniatura: todas las láminas apiladas, rotan en crossfade al hover */
+.w-media{grid-area:media;position:relative;aspect-ratio:3/2;overflow:hidden;background:var(--paper-3);border:1px solid var(--line);border-radius:5px}
+.w-media img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transform:scale(1.01);
+  transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.w-media img.on{opacity:1}
+.work:hover .w-media img.on{transform:scale(1.06)}
+.w-lam{
+  position:absolute;top:8px;left:8px;z-index:2;
+  font-family:var(--mono);font-size:7.5px;letter-spacing:.16em;
+  color:var(--ink);background:rgba(244,238,226,.9);padding:3px 8px;border-radius:3px;
+}
+.w-xh{position:absolute;inset:0;opacity:0;transition:opacity .4s;z-index:1}
+.work:hover .w-xh{opacity:1}
+.w-xh::before,.w-xh::after{content:"";position:absolute;background:rgba(182,83,24,.75)}
+.w-xh::before{left:50%;top:24%;bottom:24%;width:1px}
+.w-xh::after{top:50%;left:24%;right:24%;height:1px}
+.w-br{position:absolute;width:13px;height:13px;border:1px solid var(--ink-45);opacity:0;transition:opacity .4s,border-color .4s;z-index:2}
+.w-br.b1{top:7px;left:7px;border-right:0;border-bottom:0}
+.w-br.b2{top:7px;right:7px;border-left:0;border-bottom:0}
+.w-br.b3{bottom:7px;left:7px;border-right:0;border-top:0}
+.w-br.b4{bottom:7px;right:7px;border-left:0;border-top:0}
+.work:hover .w-br{opacity:1;border-color:var(--acc)}
+.w-open{
+  position:absolute;bottom:9px;right:9px;z-index:2;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;
+  color:var(--cream);background:var(--acc);padding:4px 10px;border-radius:999px;opacity:0;transform:translateY(6px);
+  transition:opacity .4s,transform .4s;
+}
+.work:hover .w-open{opacity:1;transform:none}
+.w-specs{grid-area:specs;display:grid;gap:.55rem}
+.w-specs .sp{display:flex;gap:.8rem;align-items:baseline;border-bottom:1px solid var(--line);padding-bottom:.4rem}
+.w-specs .k{font-family:var(--mono);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);width:56px;flex:none}
+.w-specs .v{font-family:var(--mono);font-size:.68rem}
+.w-arrow{
+  grid-area:arrow;width:42px;height:42px;border:1px solid var(--line-strong);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;justify-self:end;
+  transition:background .3s,border-color .3s,transform .35s,color .3s;
+}
+.w-arrow svg{width:15px;height:15px}
+.work:hover .w-arrow{background:var(--acc);border-color:var(--acc);color:var(--cream);transform:rotate(45deg)}
+
+/* ---- Servicios ---- */
+.svc{border:1px solid var(--line);border-top:0;background:rgba(244,238,226,.55);transition:box-shadow .35s,background .35s}
+.svc:first-of-type{border-top:1px solid var(--line)}
+.svc.open{box-shadow:inset 2px 0 0 var(--acc);background:var(--paper)}
+.svc-head{
+  width:100%;display:grid;grid-template-columns:4.6rem minmax(0,1fr) auto 2.6rem;
+  gap:1.4rem;align-items:center;text-align:left;
+  padding:clamp(1.2rem,2.4vh,1.55rem) clamp(.8rem,1.5vw,1.2rem);
+  transition:background .3s;
+}
+.svc-head:hover{background:var(--paper-2)}
+.svc.open .svc-head{background:var(--paper-2)}
+.svc-mod{font-family:var(--disp);font-weight:600;font-size:1.2rem;color:var(--acc);letter-spacing:.02em}
+.svc-t{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(1.2rem,1.9vw,1.6rem);letter-spacing:.02em;line-height:1.1}
+.svc-sub{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45)}
+.svc-ic{
+  width:30px;height:30px;border:1px solid var(--line-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  transition:transform .5s cubic-bezier(.2,.7,.2,1),background .3s,border-color .3s,color .3s;
+}
+.svc-ic svg{width:12px;height:12px}
+.svc.open .svc-ic{transform:rotate(45deg);background:var(--acc);border-color:var(--acc);color:var(--cream)}
+.svc-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.7,.2,1)}
+.svc.open .svc-body{grid-template-rows:1fr}
+.svc-inner{overflow:hidden}
+.svc-pad{
+  display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:2rem;
+  padding:.2rem clamp(.8rem,1.5vw,1.2rem) clamp(1.6rem,3vh,2.1rem) 6rem;
+}
+.svc-pad p{color:var(--ink-70);font-size:.94rem;max-width:52ch;font-weight:300}
+.svc-pad ul{list-style:none}
+.svc-pad li{
+  font-family:var(--mono);font-size:.72rem;padding:.6rem 0;border-bottom:1px solid var(--line);
+  display:flex;gap:1rem;align-items:baseline;transition:padding-left .3s,color .3s;
+}
+.svc-pad li:hover{padding-left:.8rem;color:var(--acc)}
+.svc-pad li i{font-style:normal;color:var(--acc);font-size:.6rem}
+
+/* ---- Trayectoria: registro ---- */
+.log{border-left:1px solid var(--line-strong);margin-left:6px}
+.log-entry{position:relative;padding:0 0 clamp(1.6rem,3.5vh,2.3rem) clamp(1.6rem,3vw,2.4rem)}
+.log-entry::before{
+  content:"";position:absolute;left:-6.5px;top:.5rem;width:10px;height:10px;
+  background:var(--paper);border:1.5px solid var(--ink-45);transform:rotate(45deg);
+  transition:background .4s,border-color .4s,transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.log-entry.in::before{background:var(--acc);border-color:var(--acc);transform:rotate(225deg)}
+.log-when{font-family:var(--mono);font-size:.64rem;letter-spacing:.18em;color:var(--acc);text-transform:uppercase}
+.log-head{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-top:.5rem}
+.log-what{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(1.3rem,2.1vw,1.75rem);letter-spacing:.015em}
+.log-role{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);border:1px solid var(--line);padding:.28rem .75rem;border-radius:999px}
+.log-note{color:var(--ink-70);font-size:.9rem;max-width:60ch;margin-top:.55rem;font-weight:300}
+.log-cols{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(2rem,5vw,5rem);margin-top:clamp(2.6rem,6vh,3.8rem)}
+.log-cols h4{
+  font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--acc);
+  padding-bottom:.8rem;border-bottom:1px solid var(--line-strong);margin-bottom:.4rem;
+}
+.log-cols li{
+  list-style:none;display:flex;gap:1.1rem;align-items:baseline;
+  padding:.8rem 0;border-bottom:1px solid var(--line);font-size:.9rem;
+}
+.log-cols li i{font-style:normal;font-family:var(--mono);font-size:.6rem;color:var(--acc)}
+.log-cols li span{margin-left:auto;font-family:var(--mono);font-size:.66rem;color:var(--ink-45);white-space:nowrap}
+
+/* ---- Contacto: panel tinta ---- */
+#contacto{background:var(--panel);color:var(--cream);background-image:linear-gradient(rgba(244,238,226,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(244,238,226,.05) 1px,transparent 1px);background-size:90px 90px}
+#contacto .sec-tag{color:var(--acc-soft);border-color:rgba(222,138,74,.45)}
+#contacto .sec-note{color:rgba(244,238,226,.5)}
+#contacto .sec-cross{color:var(--acc-soft)}
+.ct-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2.6rem,6vw,6rem)}
+.ct-title{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(2.5rem,5.8vw,4.8rem);line-height:.95;letter-spacing:.01em}
+.ct-title em{font-style:normal;color:var(--acc-soft)}
+.ct-lead{margin-top:1.4rem;max-width:42ch;font-size:1rem;font-weight:300;color:rgba(244,238,226,.75)}
+.ct-mail{
+  display:inline-flex;align-items:center;gap:1rem;margin-top:clamp(1.8rem,4vh,2.5rem);
+  font-family:var(--disp);font-weight:300;font-size:clamp(1.15rem,2.2vw,1.6rem);letter-spacing:.01em;
+  border-bottom:1px solid rgba(244,238,226,.5);padding-bottom:.45rem;transition:border-color .3s,background .3s;
+  overflow-wrap:anywhere;
+}
+.ct-mail:hover{border-color:var(--acc-soft);color:var(--acc-soft)}
+.ct-mail svg{width:16px;height:16px;flex:none}
+.ct-hint{font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,238,226,.45);margin-top:.8rem}
+.ct-info{margin-top:clamp(2rem,4.5vh,2.8rem)}
+.ct-info div{
+  display:flex;justify-content:space-between;gap:2rem;padding:.75rem 0;
+  border-top:1px solid rgba(244,238,226,.18);font-size:.84rem;
+}
+.ct-info .k{font-family:var(--mono);font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,238,226,.5);align-self:center}
+.ct-info a{border-bottom:1px solid rgba(244,238,226,.35)}
+.ct-info a:hover{border-color:var(--acc-soft);color:var(--acc-soft)}
+.form .field{margin-bottom:1.7rem}
+.form label{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,238,226,.55);margin-bottom:.45rem}
+.form input,.form select,.form textarea{
+  width:100%;background:transparent;border:0;border-bottom:1px solid rgba(244,238,226,.35);
+  color:var(--cream);font-family:var(--sans);font-size:1rem;padding:.55rem 0;border-radius:0;
+  transition:border-color .3s;
+}
+.form input::placeholder,.form textarea::placeholder{color:rgba(244,238,226,.35)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--acc-soft)}
+.form select{
+  appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23DE8A4A' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right .2rem center;
+}
+.form select option{background:var(--panel);color:var(--cream)}
+.form textarea{resize:vertical;min-height:104px}
+.err{font-family:var(--mono);font-size:.6rem;color:var(--acc-soft);margin-top:.4rem;display:none}
+.field.invalid .err{display:block}
+.field.invalid input,.field.invalid textarea,.field.invalid select{border-color:var(--acc-soft);background:rgba(222,138,74,.06)}
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:1.7rem}
+.btn-send{
+  width:100%;margin-top:.5rem;display:flex;align-items:center;justify-content:space-between;
+  background:var(--acc);color:var(--cream);padding:1.05rem 1.6rem;border-radius:999px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;
+  transition:background .3s;
+}
+.btn-send:hover{background:var(--acc-soft)}
+.btn-send svg{width:16px;height:16px;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.btn-send:hover svg{transform:translate(4px,-4px)}
+.btn-send:disabled{opacity:.6}
+
+/* ============ Footer ============ */
+footer{border-top:1px solid var(--line);background:var(--paper)}
+.status{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:.8rem 2rem;
+  padding:1.4rem var(--pad);font-family:var(--mono);font-size:.58rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--ink-45);
+}
+.status em{font-family:var(--disp);font-style:normal;font-weight:400;text-transform:none;letter-spacing:.04em;font-size:.85rem;color:var(--ink-70)}
+.status .dot-a{background:var(--acc)}
+
+/* ============ Modal ficha técnica ============ */
+.modal{position:fixed;inset:0;z-index:1300;display:flex;align-items:center;justify-content:center;padding:clamp(.6rem,2vh,2rem);visibility:hidden;pointer-events:none}
+.modal.open{visibility:visible;pointer-events:auto}
+.m-backdrop{position:absolute;inset:0;background:rgba(38,31,25,.55);opacity:0;transition:opacity .4s}
+.modal.open .m-backdrop{opacity:1}
+.m-panel{
+  position:relative;width:min(1120px,100%);max-height:94vh;overflow-y:auto;
+  background:var(--paper);border:1px solid var(--line-strong);border-radius:10px;
+  box-shadow:0 40px 90px rgba(38,31,25,.22);
+  transform:translateY(40px);opacity:0;transition:transform .55s cubic-bezier(.2,.7,.2,1),opacity .4s;
+}
+.modal.open .m-panel{transform:none;opacity:1}
+.m-top{
+  position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:.85rem clamp(1rem,3vw,1.6rem);background:rgba(244,238,226,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.m-file{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:var(--acc)}
+.m-tools{display:flex;align-items:center;gap:.7rem}
+.m-count{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;color:var(--ink-45)}
+.m-btn{width:35px;height:35px;border:1px solid var(--line-strong);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,color .3s}
+.m-btn:hover{background:var(--acc);border-color:var(--acc);color:var(--cream)}
+.m-btn svg{width:14px;height:14px}
+.m-body{padding:clamp(1.4rem,3.5vh,2.5rem) clamp(1rem,3vw,2.2rem) clamp(2rem,5vh,2.8rem)}
+/* hero de la ficha: clic para ampliar */
+.m-hero{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--paper-3);border:1px solid var(--line);border-radius:7px}
+.m-hero img{width:100%;height:100%;object-fit:cover}
+.m-hero:hover img.ph{filter:sepia(0) saturate(1) contrast(1) brightness(1)}
+.m-hero .w-br{opacity:1;border-color:var(--ink-45)}
+.m-hero .m-fig{position:absolute;bottom:10px;left:12px;font-family:var(--mono);font-size:8.5px;letter-spacing:.14em;color:var(--ink);background:rgba(244,238,226,.88);padding:3px 8px;border-radius:3px}
+.m-zoom{
+  position:absolute;bottom:10px;right:10px;display:flex;align-items:center;gap:.45rem;
+  font-family:var(--mono);font-size:8px;letter-spacing:.16em;color:var(--cream);
+  background:rgba(38,31,25,.75);padding:4px 10px;border-radius:999px;
+  opacity:0;transition:opacity .35s;pointer-events:none;
+}
+.m-zoom svg{width:10px;height:10px}
+.m-hero:hover .m-zoom{opacity:1}
+.m-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:1.6rem 3.4rem;margin-top:clamp(1.6rem,4vh,2.4rem);align-items:end}
+.m-title{font-family:var(--disp);font-weight:500;text-transform:uppercase;font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1;letter-spacing:.01em}
+.m-lead{font-family:var(--disp);font-weight:300;font-size:clamp(1.02rem,1.4vw,1.18rem);line-height:1.45;color:var(--ink-70)}
+.m-meta{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:7px;overflow:hidden;margin-top:clamp(1.6rem,4vh,2.2rem);background:rgba(244,238,226,.6)}
+.m-meta > div{padding:.95rem 1.1rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.m-meta > div:nth-child(3n){border-right:0}
+.m-meta > div:nth-last-child(-n+3){border-bottom:0}
+.m-meta .k{font-family:var(--mono);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-45);margin-bottom:.3rem}
+.m-meta .v{font-family:var(--mono);font-size:.76rem}
+.m-text{margin-top:clamp(1.6rem,4vh,2.2rem);max-width:66ch}
+.m-text p{color:var(--ink-70);margin-bottom:1rem;font-size:.96rem;font-weight:300}
+.m-text .lim{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;color:var(--acc);text-transform:uppercase;margin-top:1.2rem}
+/* galería completa: 3+ láminas → retícula 2 col con primera a ancho completo;
+   2 láminas → 7/5; 1 lámina → ancho completo */
+.m-gal{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-top:clamp(1.6rem,4vh,2.2rem)}
+.m-gal figure:first-child{grid-column:1/-1}
+.m-gal img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:6px;transition:filter .8s cubic-bezier(.2,.7,.2,1)}
+.m-gal figure:hover img.ph{filter:sepia(0) saturate(1) contrast(1) brightness(1)}
+.m-gal figure.tall img{aspect-ratio:3/4}
+.m-gal:not(.duo):not(.single) figure:first-child img{aspect-ratio:21/10}
+.m-gal.duo{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.m-gal.duo figure:first-child{grid-column:auto}
+.m-gal.single{grid-template-columns:1fr}
+.m-gal.single img{aspect-ratio:16/10}
+.m-gal figcaption{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-45);padding-top:.55rem}
+.m-cta{
+  display:inline-flex;align-items:center;gap:1rem;margin-top:clamp(2rem,5vh,2.8rem);
+  border:1px solid var(--acc);color:var(--acc);padding:1rem 1.7rem;border-radius:999px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;
+  transition:background .3s,color .3s;
+}
+.m-cta:hover{background:var(--acc);color:var(--cream)}
+.m-cta svg{width:14px;height:14px}
+@keyframes mIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.m-body > *{animation:mIn .65s cubic-bezier(.2,.7,.2,1) both}
+.m-body > *:nth-child(2){animation-delay:.08s}
+.m-body > *:nth-child(3){animation-delay:.14s}
+.m-body > *:nth-child(4){animation-delay:.2s}
+.m-body > *:nth-child(5){animation-delay:.26s}
+.m-body > *:nth-child(6){animation-delay:.3s}
+
+/* ============ Visor de luz (lightbox) ============ */
+.lb{position:fixed;inset:0;z-index:1600;display:none;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb-back{position:absolute;inset:0;background:rgba(24,19,14,.93)}
+.lb-file{position:absolute;top:1.1rem;left:var(--pad);font-family:var(--mono);font-size:.62rem;letter-spacing:.18em;color:var(--acc-soft);text-transform:uppercase;z-index:2}
+.lb-fig{position:relative;max-width:min(1100px,86vw);margin:0 clamp(48px,6vw,72px)}
+.lb-fig img{width:100%;max-height:76vh;object-fit:contain;background:#151109;border:1px solid rgba(244,238,226,.2);border-radius:6px}
+.lb-fig figcaption{
+  display:flex;justify-content:space-between;gap:2rem;margin-top:.85rem;
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--cream);
+}
+.lb-fig figcaption b{font-weight:400;color:var(--acc-soft)}
+.lb-btn{
+  position:absolute;width:42px;height:42px;border:1px solid rgba(244,238,226,.4);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;color:var(--cream);z-index:2;
+  transition:background .3s,border-color .3s,color .3s;
+}
+.lb-btn:hover{background:var(--acc);border-color:var(--acc)}
+.lb-btn svg{width:16px;height:16px}
+.lb-prev{left:clamp(12px,2vw,32px);top:50%;transform:translateY(-50%)}
+.lb-next{right:clamp(12px,2vw,32px);top:50%;transform:translateY(-50%)}
+.lb-close{top:1rem;right:clamp(12px,2vw,32px)}
+@media(max-width:760px){
+  .lb-prev{top:auto;bottom:4.5rem;transform:none}
+  .lb-next{top:auto;bottom:4.5rem;transform:none}
+  .lb-fig{margin:0 10px}
+  .lb-fig figcaption{flex-direction:column;gap:.2rem}
+}
+
+/* ============ Toast ============ */
+.toast{
+  position:fixed;left:50%;bottom:1.8rem;z-index:1700;
+  background:var(--panel);color:var(--cream);border-left:2px solid var(--acc);
+  padding:.95rem 1.4rem;border-radius:6px;
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.04em;
+  transform:translate(-50%,150%);transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  max-width:min(92vw,480px);display:flex;align-items:center;gap:.8rem;
+}
+.toast::before{content:"";width:6px;height:6px;background:var(--acc-soft);border-radius:50%;flex:none}
+.toast.show{transform:translate(-50%,0)}
+
+/* ============ Responsive ============ */
+@media (max-width:1000px){
+  .hero-grid,.mani,.ct-grid,.svc-pad,.log-cols,.m-head,.m-gal{grid-template-columns:1fr}
+  .m-gal.duo{grid-template-columns:1fr}
+  .h-fig{max-width:560px}
+  .h-side{display:none}
+  .work{
+    grid-template-areas:"num info arrow" "media media media" "specs specs specs";
+    grid-template-columns:3.2rem minmax(0,1fr) auto;row-gap:1.2rem;
+  }
+  .w-media{aspect-ratio:16/9}
+  .w-specs{grid-template-columns:repeat(3,auto);justify-content:start;gap:.55rem 2rem}
+  .sec-note{margin-left:0;width:100%}
+}
+@media (max-width:760px){
+  .nav-links,.nav-clock{display:none}
+  .burger{display:flex}
+  .brand{font-size:.92rem}
+  .h-meta > div{flex:1 1 45%;margin-right:1rem;border-right:0;padding-right:0}
+  .f-row{grid-template-columns:1fr}
+  .m-meta{grid-template-columns:1fr 1fr}
+  .m-meta > div{border-right:1px solid var(--line)!important;border-bottom:1px solid var(--line)!important}
+  .m-meta > div:nth-child(2n){border-right:0!important}
+  .m-meta > div:nth-last-child(-n+2){border-bottom:0}
+  .w-specs{grid-template-columns:1fr 1fr}
+  .status{flex-direction:column;gap:.5rem}
+  .origin{display:none}
+}
+@media (max-width:560px){
+  .nav-cta{display:none}
+  .hero-title .h-l1{font-size:clamp(2.7rem,14vw,3.8rem)}
+  .hero-title .h-l2{font-size:clamp(1.5rem,7.5vw,2.1rem)}
+}
+@media (hover:none){
+  .c-dot,.c-ring,.c-read,.guides{display:none!important}
+  .w-open,.w-br{opacity:1}
+  .w-br{border-color:var(--ink-45)}
+  .ph{filter:sepia(.1) saturate(.9) contrast(1.02)}
+}
+</style>
+</head>
+<body>
+
+<!-- Progreso de scroll (regla superior) -->
+<div class="progress" aria-hidden="true"><div class="bar" id="scrollBar"></div></div>
+
+<!-- Regla lateral de elevación -->
+<div class="ruler" id="ruler" aria-hidden="true">
+  <div id="rTicks"></div>
+  <div class="r-mark" id="rMark" data-v="000"></div>
+</div>
+
+<!-- Cursor retícula -->
+<div class="c-dot" id="cDot" aria-hidden="true"></div>
+<div class="c-ring" id="cRing" aria-hidden="true"></div>
+<div class="c-read" id="cRead" aria-hidden="true">0000 · 0000</div>
+
+<!-- HUD lateral -->
+<aside class="hud" aria-hidden="true">
+  <div class="hud-mark">IF</div>
+  <div class="hud-rule"></div>
+  <div class="hud-block">
+    <span>20.6597° N</span><span>103.3496° O</span>
+    <span>GDL · JAL</span><b class="hud-live clock">--:--:--</b>
+  </div>
+  <div class="hud-rule"></div>
+  <div class="hud-block">
+    <span>SCROLL</span><b id="hudScroll">000%</b>
+    <span>SECCIÓN</span><b id="hudSec">00 · INICIO</b>
+  </div>
+  <div class="hud-rule"></div>
+  <div class="hud-mark" style="border-color:var(--acc-dim);color:var(--acc)">+</div>
+</aside>
+
+<!-- Navegación -->
+<nav class="nav" id="nav">
+  <a class="brand" href="#inicio">
+    <span class="chip">IF</span>
+    Ian Franco-Razon <small>Arq.</small>
+  </a>
+  <div class="nav-links">
+    <a href="#sobre" data-sec="sobre"><i>01</i>Sobre mí</a>
+    <a href="#proyectos" data-sec="proyectos"><i>02</i>Proyectos</a>
+    <a href="#servicios" data-sec="servicios"><i>03</i>Servicios</a>
+    <a href="#trayectoria" data-sec="trayectoria"><i>04</i>Trayectoria</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:1.4rem">
+    <span class="nav-clock">GDL <span class="clock">--:--:--</span></span>
+    <a class="nav-cta" href="#contacto">Contáctame →</a>
+    <button class="burger" id="burger" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Menú móvil -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" id="mmClose">CERRAR ✕</button>
+  <a href="#sobre"><i>01</i>Sobre mí</a>
+  <a href="#proyectos"><i>02</i>Proyectos</a>
+  <a href="#servicios"><i>03</i>Servicios</a>
+  <a href="#trayectoria"><i>04</i>Trayectoria</a>
+  <a href="#contacto"><i>05</i>Contacto</a>
+  <p class="mm-foot">Guadalajara, Jal. — ianfr.contacto@gmail.com</p>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="inicio">
+
+  <!-- Mapamundi sepia de fondo — siluetas realistas -->
+  <div class="h-map" aria-hidden="true">
+    <svg id="mapSvg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice">
+      <g class="land">
+        <path d="M33,68 L39,65 50,64 65,52 89,56 111,57 125,58 144,56 167,57 181,61 194,61 208,60 222,60 233,53 250,60 264,67 250,72 242,83 239,87 256,94 272,97 278,106 281,107 289,97 306,80 320,89 339,100 333,111 319,114 317,117 322,125 333,125 325,128 317,128 306,131 306,135 294,139 292,147 289,153 281,158 275,164 278,177 275,181 271,172 264,167 253,168 247,169 239,168 231,178 231,189 233,196 239,200 247,199 250,192 258,191 258,194 256,200 256,206 269,207 268,214 269,219 271,222 279,224 286,227 277,229 274,228 264,222 257,215 253,212 244,210 236,206 225,204 219,200 208,197 203,182 196,175 183,163 186,167 189,173 193,182 195,186 192,181 186,173 181,165 179,162 177,159 174,156 167,154 163,148 161,145 156,138 156,130 156,121 154,116 158,113 149,110 144,104 138,99 131,94 122,88 113,84 96,83 85,82 78,85 64,90 56,95 60,87 51,82 43,74 Z"/>
+        <path d="M336,113 L354,118 351,108 344,107 Z"/>
+        <path d="M378,83 L364,76 353,68 350,64 347,58 344,53 339,44 331,38 311,36 306,32 319,28 342,24 375,21 417,19 439,28 444,33 439,44 433,53 431,60 411,61 408,69 394,71 383,78 Z"/>
+        <path d="M265,188 L278,186 292,194 285,194 272,189 Z"/>
+        <path d="M294,196 L308,195 303,200 Z"/>
+        <path d="M292,218 L300,217 311,219 322,222 331,222 342,233 356,238 361,246 364,250 377,257 393,261 403,271 397,281 392,292 387,306 383,314 367,321 367,329 356,339 351,344 344,346 339,347 342,352 328,358 325,366 319,370 318,377 312,378 312,386 311,391 309,396 309,402 308,403 302,403 294,397 294,388 296,378 296,369 297,361 301,353 301,342 301,333 304,322 304,314 304,305 297,296 290,291 283,278 276,267 275,258 276,253 281,247 284,239 286,233 286,227 Z"/>
+        <path d="M433,69 L439,72 458,71 464,67 447,65 Z"/>
+        <path d="M486,111 L504,104 496,97 492,88 484,88 485,94 488,99 485,107 Z"/>
+        <path d="M472,101 L483,100 483,105 472,107 Z"/>
+        <path d="M475,144 L476,136 474,131 478,129 494,130 497,127 497,122 493,119 487,116 496,112 500,112 504,109 513,105 520,101 524,96 522,93 527,91 530,93 528,96 533,99 539,100 551,98 558,95 558,92 565,88 568,85 578,85 583,84 575,82 564,83 560,81 559,75 567,69 560,68 554,74 550,79 551,86 549,87 540,94 536,96 535,96 533,90 529,86 519,89 514,88 515,82 518,76 522,74 529,69 533,67 540,62 546,60 551,57 569,53 578,53 592,57 603,61 600,65 606,72 617,67 622,61 633,61 644,59 650,59 661,59 667,58 689,53 694,49 703,51 708,50 722,47 739,42 764,39 783,35 794,36 806,39 814,44 853,47 867,49 894,49 922,53 936,56 950,57 958,60 978,64 994,69 981,72 989,76 972,83 961,83 950,86 950,92 953,97 935,109 932,100 931,92 920,85 894,86 875,97 881,100 892,103 890,115 883,122 875,129 861,139 861,143 861,150 856,154 851,150 850,144 847,140 838,137 828,142 826,142 840,147 832,153 833,160 839,164 837,171 832,179 822,186 816,189 807,192 800,199 794,198 796,203 800,206 803,213 802,218 791,225 785,217 779,213 779,225 783,235 789,246 781,242 775,231 773,222 771,206 763,206 761,200 756,193 751,189 744,190 741,192 738,194 736,196 731,201 725,206 722,214 716,228 711,222 707,214 703,207 702,197 702,190 694,192 692,189 689,185 686,182 685,181 671,181 658,177 650,177 642,172 635,167 640,178 643,181 650,182 657,180 665,188 666,189 659,198 653,203 650,203 644,206 633,211 625,214 620,215 618,208 611,197 607,189 600,179 597,172 597,168 595,173 590,167 592,164 596,162 598,159 599,154 600,150 592,150 583,150 578,148 575,147 576,144 574,142 572,138 568,137 564,138 564,142 566,145 563,149 560,148 558,143 554,138 553,134 544,129 542,127 537,124 534,124 539,132 544,134 551,138 550,139 547,140 544,145 544,144 539,137 533,134 528,131 524,127 518,131 511,130 502,136 500,140 498,145 494,148 488,148 485,150 481,147 Z"/>
+        <path d="M864,154 L875,156 883,154 892,149 894,142 892,135 888,140 883,147 878,150 868,152 Z"/>
+        <path d="M861,157 L865,163 863,164 860,160 Z"/>
+        <path d="M893,132 L900,133 907,128 896,124 Z"/>
+        <path d="M892,106 L895,100 897,106 893,114 Z"/>
+        <path d="M833,186 L836,181 839,188 Z"/>
+        <path d="M833,206 L838,199 839,211 836,211 Z"/>
+        <path d="M843,227 L851,224 852,231 844,233 Z"/>
+        <path d="M484,151 L500,148 522,147 531,147 542,160 553,166 561,159 569,162 580,163 589,163 590,167 596,172 600,183 603,193 607,200 610,208 619,218 620,218 628,221 639,218 643,218 642,222 628,243 618,251 614,255 610,262 608,269 607,278 606,286 601,299 597,306 597,316 593,321 586,333 576,342 569,344 556,347 554,347 551,344 549,340 546,331 541,322 536,314 535,303 537,292 537,283 533,275 536,267 533,258 528,244 526,239 517,238 503,233 492,236 481,238 472,236 469,232 464,224 452,209 454,197 453,192 458,183 464,177 469,172 473,164 472,160 Z"/>
+        <path d="M638,285 L641,293 638,297 633,318 627,321 622,311 623,303 625,294 630,293 Z"/>
+        <path d="M722,224 L727,227 725,233 722,231 Z"/>
+        <path d="M803,244 L806,246 817,238 826,231 831,236 826,240 824,247 814,254 806,254 803,250 Z"/>
+        <path d="M765,241 L765,235 771,239 778,247 786,254 794,265 789,265 781,258 774,248 Z"/>
+        <path d="M792,267 L818,272 817,275 792,270 Z"/>
+        <path d="M831,249 L835,256 839,261 835,265 831,259 Z"/>
+        <path d="M863,257 L864,251 872,253 882,255 892,258 905,264 910,267 917,269 918,279 908,274 900,272 893,274 885,273 874,271 867,261 Z"/>
+        <path d="M817,311 L815,318 814,322 817,324 821,336 822,341 819,344 825,347 832,346 843,344 858,338 867,339 876,347 882,347 888,353 899,358 908,358 917,355 918,355 921,345 920,345 925,337 926,328 925,321 919,313 913,307 906,302 904,296 896,281 893,292 892,299 888,299 881,295 876,292 879,284 863,285 859,291 856,293 850,289 843,295 839,297 831,306 Z"/>
+        <path d="M981,350 L981,346 989,354 994,357 989,361 986,366 983,358 Z"/>
+        <path d="M972,374 L981,369 975,379 967,385 964,381 Z"/>
+      </g>
+      <g class="grat">
+        <line x1="0" y1="83" x2="1000" y2="83"/>
+        <line x1="0" y1="167" x2="1000" y2="167"/>
+        <line x1="0" y1="333" x2="1000" y2="333"/>
+        <line x1="0" y1="417" x2="1000" y2="417"/>
+        <line x1="83" y1="0" x2="83" y2="500"/>
+        <line x1="167" y1="0" x2="167" y2="500"/>
+        <line x1="250" y1="0" x2="250" y2="500"/>
+        <line x1="333" y1="0" x2="333" y2="500"/>
+        <line x1="417" y1="0" x2="417" y2="500"/>
+        <line x1="500" y1="0" x2="500" y2="500"/>
+        <line x1="583" y1="0" x2="583" y2="500"/>
+        <line x1="667" y1="0" x2="667" y2="500"/>
+        <line x1="750" y1="0" x2="750" y2="500"/>
+        <line x1="833" y1="0" x2="833" y2="500"/>
+        <line x1="917" y1="0" x2="917" y2="500"/>
+      </g>
+      <line class="eq" x1="0" y1="250" x2="1000" y2="250"/>
+      <text class="maptxt" x="8" y="246">ECUADOR — 0°</text>
+      <text class="maptxt" x="580" y="494">PROYECCIÓN EQUIRECTANGULAR · WGS 84</text>
+    </svg>
+  </div>
+
+  <!-- ejes cartesianos que siguen el cursor -->
+  <div class="guides" id="guides" aria-hidden="true">
+    <div id="gx"></div><div id="gy"></div>
+    <span class="guide-tag" id="gxT">X 0000</span>
+    <span class="guide-tag" id="gyT">Y 0000</span>
+  </div>
+  <div class="origin" aria-hidden="true">ORIGEN 0,0</div>
+
+  <div class="wrap hero-grid">
+    <div>
+      <p class="h-kicker h-in"><span class="dash"></span>Portafolio de proyectos — 2024 / 2025</p>
+      <h1 class="hero-title">
+        <span class="h-l1 h-in">Ian</span>
+        <span class="h-l2 h-in">Franco-Razon<span class="deg">°</span></span>
+      </h1>
+      <div class="h-scale h-in" aria-hidden="true">
+        <span class="ticks"></span>
+        <span class="sl">Escala — <b>1:100</b> · GDL</span>
+      </div>
+      <p class="hero-sub h-in">
+        Arquitecto — Universidad de Guadalajara. <strong>Cuatro años de experiencia</strong> en
+        arquitectura residencial y desarrollos verticales, donde el arte y la función
+        convergen en cada línea. <span class="lim">LESS IS MORE.</span>
+      </p>
+      <div class="h-meta h-in">
+        <div><p class="k">Base</p><p class="v">Guadalajara, Jalisco</p></div>
+        <div><p class="k">Coordenadas</p><p class="v">20.6597° N · 103.3496° O</p></div>
+        <div><p class="k">Estado</p><p class="v"><span class="dot-a"></span>Disponible para colaborar</p></div>
+      </div>
+      <div class="h-ctas h-in">
+        <a class="btn btn-solid" href="#proyectos">
+          Ver proyectos
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </a>
+        <a class="btn btn-ghost" href="#contacto">Contacto</a>
+      </div>
+    </div>
+
+    <figure class="h-fig h-in">
+      <div class="h-frame" id="heroFrame">
+        <!-- 2 imágenes inyectadas por JS para crossfade -->
+        <span class="h-xh"></span>
+        <span class="h-tagfile">IMG.0001 — 2 RANURAS CONTEXTO</span>
+      </div>
+      <span class="h-side">FIG.00 — CONTEXTO · 2 RANURAS DISPONIBLES</span>
+      <figcaption class="h-cap">
+        <span>Contexto — Composición urbana</span><b>N 20°37'19"</b>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track" id="mqTrack">
+      <span class="hl">Less is more</span><span class="sep">·</span>
+      <span>Sostenibilidad</span><span class="sep">·</span>
+      <span>Innovación y arte</span><span class="sep">·</span>
+      <span>Residencial</span><span class="sep">·</span>
+      <span>Desarrollos verticales</span><span class="sep">·</span>
+      <span>Cliente al centro</span><span class="sep">·</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 01 SOBRE MÍ ============ -->
+<section class="section" id="sobre">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">[ 01 ]</span>
+      <h2 class="sec-title">Sobre <em>mí</em></h2>
+      <span class="sec-note">Filosofía — Rev. 2025</span>
+    </div>
+    <div class="sec-cross"><span>+</span><span class="rule" style="flex:1;margin:0 1rem;align-self:center"></span><span>+</span></div>
+
+    <div class="mani">
+      <p class="mani-text reveal">
+        Creo que el arte y la función no compiten: son <span class="hl">el mismo dibujo</span>.
+        <span class="dl">Less is more</span> — pero "menos" no es simpleza, es precisión: cada
+        línea debe justificar su lugar, y cada espacio responder al entorno, a la energía
+        y a quien lo va a habitar.
+        <span class="indent">
+          Me formé entre el aula y la obra: cuatro años de práctica en residencial y
+          desarrollos verticales mientras curso el grado en la UdeG.
+          <span class="hl">Y eso se nota en el resultado.</span>
+        </span>
+      </p>
+      <aside class="mani-side">
+        <figure class="portrait reveal" style="--d:.04s">
+          <div class="p-frame">
+            <img class="ph"
+                 src="imagenes/retrato.png"
+                 data-fb="https://picsum.photos/seed/if-retrato/800/1000.jpg"
+                 onerror="this.onerror=null;this.src=this.dataset.fb"
+                 alt="Ian Franco-Razon — retrato (ranura disponible)">
+            <span class="w-br b1"></span><span class="w-br b2"></span><span class="w-br b3"></span><span class="w-br b4"></span>
+            <span class="p-tag">REG. IF-01 — GDL</span>
+          </div>
+          <figcaption class="p-cap">
+            <span>Ian Franco-Razon — Arq.</span><b>4:5 · RGB</b>
+          </figcaption>
+        </figure>
+
+        <p class="reveal" style="--d:.08s">
+          Arquitecto en la Universidad de Guadalajara (CUAAD), generación 2021–2026.
+          La formación corre en paralelo a la práctica: más de cuatro años trabajando en
+          arquitectura residencial y desarrollos verticales, donde el criterio se afina
+          entre planos, obra y cliente.
+        </p>
+        <p class="reveal" style="--d:.16s">
+          Antes de llegar aquí: arquitecto junior en Diamont Home Desarrolladora y
+          asistente de ingeniería en VRS Acero. Vivienda, torres y acero — la base
+          técnica que sostiene cada propuesta de diseño.
+        </p>
+        <div class="proto reveal" style="--d:.22s">
+          <p class="proto-h">Pilares de diseño</p>
+          <ol>
+            <li><i>P.01</i> SOSTENIBILIDAD Y EFICIENCIA ENERGÉTICA</li>
+            <li><i>P.02</i> INNOVACIÓN CON ARTE</li>
+            <li><i>P.03</i> CLIENTE AL CENTRO</li>
+            <li><i>P.04</i> LESS IS MORE</li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+
+    <div class="stats reveal" style="--d:.1s">
+      <div class="stat"><p class="stat-n" data-count="4" data-pad="2">00</p><p class="stat-l">Años de experiencia</p></div>
+      <div class="stat"><p class="stat-n" data-count="5" data-pad="2">00</p><p class="stat-l">Proyectos en el portafolio</p></div>
+      <div class="stat"><p class="stat-n" data-count="2" data-pad="2">00</p><p class="stat-l">Empresas en la carrera</p></div>
+      <div class="stat"><p class="stat-n" data-count="1" data-pad="2">00</p><p class="stat-l">Filosofía — Less is more</p></div>
+    </div>
+
+    <div class="areas reveal" style="--d:.15s">
+      <p class="k">Terreno de juego</p>
+      <div class="areas-row">
+        <span>Residencial</span><span class="sep">/</span>
+        <span>Vertical</span><span class="sep">/</span>
+        <span>Uso mixto</span><span class="sep">/</span>
+        <span>Envolventes</span><span class="sep">/</span>
+        <span>Educacional</span><span class="sep">/</span>
+        <span>Estructuras de acero</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 PROYECTOS ============ -->
+<section class="section" id="proyectos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">[ 02 ]</span>
+      <h2 class="sec-title">Proyectos <em>destacados</em></h2>
+      <span class="sec-note">05 fichas técnicas — 03 propuestas · 02 bocetos</span>
+    </div>
+    <div class="sec-cross"><span>+</span><span class="rule" style="flex:1;margin:0 1rem;align-self:center"></span><span>+</span></div>
+    <div class="works" id="worksList"><!-- filas generadas por JS --></div>
+  </div>
+</section>
+
+<!-- ============ 03 SERVICIOS ============ -->
+<section class="section" id="servicios" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">[ 03 ]</span>
+      <h2 class="sec-title">Servicios</h2>
+      <span class="sec-note">05 módulos del sistema</span>
+    </div>
+    <div class="sec-cross"><span>+</span><span class="rule" style="flex:1;margin:0 1rem;align-self:center"></span><span>+</span></div>
+    <div id="svcList"><!-- generados por JS --></div>
+  </div>
+</section>
+
+<!-- ============ 04 TRAYECTORIA ============ -->
+<section class="section" id="trayectoria" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">[ 04 ]</span>
+      <h2 class="sec-title">Trayectoria</h2>
+      <span class="sec-note">Registro — UdeG · GDL</span>
+    </div>
+    <div class="sec-cross"><span>+</span><span class="rule" style="flex:1;margin:0 1rem;align-self:center"></span><span>+</span></div>
+
+    <div class="log">
+      <div class="log-entry reveal">
+        <p class="log-when">2021 — 2026 · Formación en curso</p>
+        <div class="log-head">
+          <h3 class="log-what">Universidad de Guadalajara</h3>
+          <span class="log-role">Grado en Arquitectura</span>
+        </div>
+        <p class="log-note">CUAAD — Centro Universitario de Arte, Arquitectura y Diseño. Formación que corre en paralelo a la práctica profesional: la teoría llega al aula con olor a obra.</p>
+      </div>
+      <div class="log-entry reveal" style="--d:.08s">
+        <p class="log-when">Experiencia reciente</p>
+        <div class="log-head">
+          <h3 class="log-what">Diamont Home Desarrolladora</h3>
+          <span class="log-role">Arquitecto junior</span>
+        </div>
+        <p class="log-note">Desarrollos residenciales y verticales: diseño, documentación y seguimiento de proyecto. Donde aprendí que la creatividad también se mide en metros cuadrados vendibles.</p>
+      </div>
+      <div class="log-entry reveal" style="--d:.16s">
+        <p class="log-when">Experiencia previa</p>
+        <div class="log-head">
+          <h3 class="log-what">VRS Acero</h3>
+          <span class="log-role">Asistente de ingeniería</span>
+        </div>
+        <p class="log-note">Estructuras metálicas: detalle, coordinación y oficina técnica. La base estructural que hoy me permite dialogar de tú a tú con la ingeniería.</p>
+      </div>
+    </div>
+
+    <div class="log-cols">
+      <div class="reveal">
+        <h4>Formación</h4>
+        <ul>
+          <li><i>F.02</i> Grado en Arquitectura — UdeG · CUAAD <span>2021—2026</span></li>
+          <li><i>F.01</i> Estudio de campo — Sitios arqueológicos de Yucatán <span>Uxmal</span></li>
+        </ul>
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <h4>Áreas de experiencia</h4>
+        <ul>
+          <li><i>A.05</i> Estructuras metálicas <span>VRS Acero</span></li>
+          <li><i>A.04</i> Envolventes y fachadas <span>CUAAD-CRAI</span></li>
+          <li><i>A.03</i> Desarrollos verticales <span>Diamont Home</span></li>
+          <li><i>A.02</i> Vivienda residencial <span>Diamont Home</span></li>
+          <li><i>A.01</i> Arquitectura de uso mixto <span>The Summit</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 CONTACTO ============ -->
+<section class="section" id="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">[ 05 ]</span>
+      <h2 class="sec-title">Hablemos<em>.</em></h2>
+      <span class="sec-note">Respuesta en 48 h</span>
+    </div>
+    <div class="sec-cross"><span>+</span><span class="rule" style="flex:1;margin:0 1rem;align-self:center;background:rgba(244,238,226,.35)"></span><span>+</span></div>
+
+    <div class="ct-grid">
+      <div class="reveal">
+        <p class="ct-lead">
+          Busco mi siguiente reto: sumarme a equipos de arquitectura y desarrollo —
+          o materializar tu próximo proyecto. Cuéntame qué estás construyendo
+          y yo me encargo de las preguntas correctas.
+        </p>
+        <a class="ct-mail" href="mailto:ianfr.contacto@gmail.com" id="copyMail">
+          ianfr.contacto@gmail.com
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="12" height="12" rx="1"/><path d="M5 15H4a1 1 0 01-1-1V4a1 1 0 011-1h10a1 1 0 011 1v1"/></svg>
+        </a>
+        <p class="ct-hint">Click para copiar el correo</p>
+        <div class="ct-info">
+          <div><span class="k">Teléfono</span><a href="tel:+523320767594">+52 33 2076 7594</a></div>
+          <div><span class="k">Base</span><span>Guadalajara, Jalisco</span></div>
+          <div><span class="k">Idiomas</span><span>Español · Inglés</span></div>
+          <div><span class="k">Instagram</span><a href="https://www.instagram.com/ian.franc" target="_blank" rel="noopener">@ian.franc</a></div>
+          <div><span class="k">LinkedIn</span><span>Ian Franco</span></div>
+        </div>
+      </div>
+
+      <form class="form reveal" id="ctForm" novalidate style="--d:.12s">
+        <div class="f-row">
+          <div class="field" id="fName">
+            <label for="inName">Nombre</label>
+            <input id="inName" type="text" autocomplete="name" placeholder="¿Cómo te llamas?">
+            <p class="err">Necesito saber cómo dirigirme a ti.</p>
+          </div>
+          <div class="field" id="fMail">
+            <label for="inMail">Correo</label>
+            <input id="inMail" type="email" autocomplete="email" placeholder="tu@empresa.com">
+            <p class="err">Escribe un correo válido para poder responder.</p>
+          </div>
+        </div>
+        <div class="field" id="fType">
+          <label for="inType">Motivo de contacto</label>
+          <select id="inType">
+            <option value="">Selecciona una opción…</option>
+            <option>Oportunidad de empleo</option>
+            <option>Colaboración / freelance</option>
+            <option>Proyecto residencial</option>
+            <option>Proyecto comercial / mixto</option>
+            <option>Prácticas o academia</option>
+            <option>Otro</option>
+          </select>
+          <p class="err">Elige el motivo más cercano.</p>
+        </div>
+        <div class="field" id="fMsg">
+          <label for="inMsg">Cuéntame</label>
+          <textarea id="inMsg" placeholder="Empresa o proyecto, escala, tiempos, lo que tengas…"></textarea>
+          <p class="err">Dos líneas bastan — pero necesito al menos unas palabras.</p>
+        </div>
+        <button class="btn-send" type="submit" id="btnSend">
+          <span id="sendLabel">Transmitir mensaje</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="status">
+    <span>© <span id="year">2025</span> Ian Franco-Razon · Arquitecto</span>
+    <span><em>Less is more — línea por línea.</em></span>
+    <span>GDL — <span class="clock">--:--:--</span></span>
+    <span><span class="dot-a"></span>SYS.NOMINAL</span>
+  </div>
+</footer>
+
+<!-- ============ Modal ficha técnica ============ -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Ficha técnica de proyecto">
+  <div class="m-backdrop" data-close></div>
+  <div class="m-panel" id="mPanel">
+    <div class="m-top">
+      <span class="m-file" id="mFile">FICHA 01 / 05</span>
+      <div class="m-tools">
+        <button class="m-btn" id="mPrev" aria-label="Proyecto anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M5 12l6-6M5 12l6 6"/></svg>
+        </button>
+        <span class="m-count" id="mCount">01 / 05</span>
+        <button class="m-btn" id="mNext" aria-label="Proyecto siguiente">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M19 12l-6-6M19 12l-6 6"/></svg>
+        </button>
+        <button class="m-btn" id="mClose" aria-label="Cerrar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="m-body" id="mBody"></div>
+  </div>
+</div>
+
+<!-- ============ Visor de luz ============ -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Visor de imágenes">
+  <div class="lb-back" id="lbBack"></div>
+  <span class="lb-file" id="lbFile"></span>
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Cerrar visor">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <figure class="lb-fig">
+    <img id="lbImg" src="" alt="">
+    <figcaption><span id="lbCap"></span><b id="lbCount"></b></figcaption>
+  </figure>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Imagen anterior">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M5 12l6-6M5 12l6 6"/></svg>
+  </button>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Imagen siguiente">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M19 12l-6-6M19 12l-6 6"/></svg>
+  </button>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ================================================================
+   IMÁGENES — RANURAS CONFIGURADAS
+   ----------------------------------------------------------------
+   1. Crea una carpeta "imagenes" junto a este archivo.
+   2. Guarda tus imágenes con ESTOS nombres:
+      
+      Portada (2 imágenes, crossfade automático):
+        contexto-1.png
+        contexto-2.png
+        
+      The Summit (21 imágenes):
+        summit-1.jpg hasta summit-21.jpg
+        
+      Torre Vidrio (7 imágenes):
+        vidrio-1.jpg hasta vidrio-7.jpg
+        
+      CUAAD-CRAI (4 imágenes):
+        cuaad-1.jpg hasta cuaad-4.jpg
+        
+      Casa Colinas de San Javier (2 imágenes activas):
+        GENDO_LORENZANA_EXTRAS_BD82.png
+        GENDO_LORENZANA_EXTRAS_1850.png
+        
+      Torres Mariano Otero (1 imagen activa):
+        GENDO_LORENZANA_EXTRAS_3955.png
+        
+      Retrato:
+        retrato.png
+
+   3. Si falta un archivo, aparece un placeholder temporal.
+   ================================================================ */
+
+const fb=(im,w,h)=>`https://picsum.photos/seed/${im.seed}/${w}/${h}.jpg`;
+
+const ph=(im,w,h,alt='',attrs='')=>{
+  if(im.url&&im.file){
+    return `<img class="ph" src="${im.file}" ${attrs} data-fb1="${im.url}" data-fb2="${fb(im,w,h)}" onerror="if(!this.dataset.s){this.dataset.s=1;this.src=this.dataset.fb1}else{this.onerror=null;this.src=this.dataset.fb2}" alt="${alt}" loading="lazy">`;
+  }
+  const src=im.url||im.file||fb(im,w,h);
+  return `<img class="ph" src="${src}" ${attrs} data-fb="${fb(im,w,h)}" onerror="this.onerror=null;this.src=this.dataset.fb" alt="${alt}" loading="lazy">`;
+};
+
+/* Generador de ranuras vacías */
+const mkImgs = (prefix, count, w=1600, h=1000) => Array.from({length: count}, (_, i) => ({
+  file: `imagenes/${prefix}-${i+1}.jpg`,
+  seed: `if-${prefix}-${i+1}`,
+  w, h,
+  cap: `Fig. ${String(i+1).padStart(2,'0')} — Ranura disponible`
+}));
+
+/* =================== Datos =================== */
+const projects=[
+  {id:'summit',num:'01',name:'The Summit',type:'Residencial · Uso mixto',loc:'Zapopan, Jal.',year:'2025',
+   escala:'Complejo flexible',client:'Propuesta personal',status:'Concepto',
+   lead:'Un edificio que emerge como extensión del paisaje: inspirado en la erosión y la sedimentación, no es un objeto terminado sino un sistema vivo que se adapta a quienes lo habitan.',
+   body:[
+    'The Summit nace de los procesos naturales que esculpen el terreno con el tiempo. Como un brote que rompe el suelo, el edificio crece y se reconfigura: su estructura modular y sus espacios mutables permiten que distintos programas coexistan y evolucionen según las necesidades de sus habitantes.',
+    'El nombre evoca un punto culminante —el destino alcanzado tras un proceso de crecimiento y transformación—. El conjunto se organiza en torno a espacios abiertos, transporte público de alta demanda y azoteas verdes: una propuesta donde el cambio es constante y la flexibilidad es su mayor fortaleza.'
+   ],
+   images: mkImgs('summit', 21, 1600, 900) // 21 ranuras
+  },
+  {id:'vidrio',num:'02',name:'Torre Vidrio',type:'Residencial · Comercial',loc:'Guadalajara — Col. Americana',year:'2024',
+   escala:'8 niveles + 3 sótanos',client:'Desarrollo privado',status:'Propuesta',
+   lead:'Torre residencial de 8 niveles con jardín panorámico en azotea que preserva e integra una residencia funcionalista de mediados del siglo XX en la Colonia Americana.',
+   body:[
+    'El proyecto plantea un edificio de 8 niveles residenciales, jardín panorámico en azotea y 3 sótanos, en un lote de la Colonia Americana —zona de valor histórico, diversidad arquitectónica y vida urbana intensa—. La intervención respeta la residencia funcionalista existente: la casa se restaura y reprograma como acceso principal, funcionando como lobby, galería, café o espacio de coworking para residentes.',
+    'La torre se levanta detrás de la casa preservada con una estrategia de retiro que mantiene visible la original. Planta baja elevada con áreas verdes y lobby; 8 niveles residenciales con unidades de 1, 2 y 3 recámaras con ventilación cruzada y terrazas; azotea con asadores, jardín aromático y vistas panorámicas; y 3 sótanos con estacionamiento, bodegas y captación de agua pluvial.'
+   ],
+   images: mkImgs('vidrio', 7, 1600, 900) // 7 ranuras
+  },
+  {id:'cuaad',num:'03',name:'CUAAD-CRAI Envelope',type:'Educativo',loc:'Guadalajara — UdeG, CUAAD',year:'2025',
+   escala:'Envolvente de fachada',client:'UdeG — CUAAD',status:'Propuesta académica',
+   lead:'Envolvente exterior para un anexo del CRAI en el CUAAD de la Universidad de Guadalajara: raíces prehispánicas y materiales de nueva tecnología en una misma piel.',
+   body:[
+    'La composición nació de un viaje por la península de Yucatán y del encuentro con sitios arqueológicos como Uxmal: la fuerza simbólica y la precisión estética del Palacio del Gobernador, el Cuadrángulo de las Monjas y la Casa de las Tortugas. Esa experiencia llevó a reinterpretar esos elementos con una lente arquitectónica contemporánea.',
+    'El diseño incorpora la materialidad y la geometría de las estructuras mayas traducidas a una expresión moderna. Los grandes ventanales de la fachada hacen eco de las aperturas de los templos antiguos; la textura de los elementos estructurales remite a las grecas y bajos relieves de Uxmal, reimaginados con una estética minimalista.'
+   ],
+   images: mkImgs('cuaad', 4, 1600, 900) // 4 ranuras
+  },
+  {id:'colinas',num:'04',name:'Casa Colinas de San Javier',type:'Residencial',loc:'Colinas de San Javier, Jal.',year:'2025',
+   escala:'Vivienda unifamiliar',client:'Privado',status:'Boceto',
+   lead:'Una casa que nace del terreno: piedra y concreto en volúmenes que se apoyan en la ladera, entre muros bajos de piedra y bosque.',
+   body:[
+    'El boceto explora la integración de la vivienda con su entorno inmediato: los muros bajos de piedra extienden el límite del predio hacia el paisaje y lo devuelven al terreno, mientras los volúmenes de concreto se acomodan en la pendiente sin imponerse. El acceso se resuelve con un portón de madera que anticipa la calidez del interior; el garage se integra al volumen principal como parte del gesto, no como anexo.',
+    'La vegetación existente se conserva como material del proyecto: los árboles filtran la luz sobre los muros, la vegetación trepadora coloniza las fachadas de piedra y la cinta verde del frente convierte la pendiente de acceso en transición, no en corte. El siguiente paso del estudio: definir la materialidad interior y la relación de los espacios principales con las visuales del bosque.'
+   ],
+   images:[
+    {file:'imagenes/GENDO_LORENZANA_EXTRAS_BD82.png',
+     url:'https://z-cdn-media.chatglm.cn/files/75f77f2d-2215-4dd9-9043-f09fc27c9c92.png?auth_key=1888974413-693a77c4597d4475a9e73fdb3fc7074e-0-710b2def5dd70da1763cbfe1ed6823d6',
+     seed:'if-colinas-a',w:1600,h:1000,cap:'Fig. 01 — Volumen de piedra y concreto desde el acceso'},
+    {file:'imagenes/GENDO_LORENZANA_EXTRAS_1850.png',
+     url:'https://z-cdn-media.chatglm.cn/files/378db488-e618-4094-b33b-2c13d34ab51d.png?auth_key=1888975330-7416c7b3ad874534a5914b6f4498db18-0-919f6d932ceb3f8668b7aa0b539d196d',
+     seed:'if-colinas-b',w:1600,h:1000,cap:'Fig. 02 — Vegetación sobre los muros, bosque envolvente'}
+   ]},
+  {id:'mariano',num:'05',name:'Torres Mariano Otero',type:'Residencial · Vertical',loc:'Guadalajara — Av. Mariano Otero',year:'2025',
+   escala:'Conjunto vertical',client:'Propuesta personal',status:'Boceto',
+   lead:'Boceto de conjunto vertical sobre la avenida Mariano Otero: torres conectadas de fachada blanca sobre un zócalo de vida pública.',
+   body:[
+    'El boceto estudia la relación entre la torre residencial y la calle: la planta baja se abre como espacio público cubierto —comercio, encuentro, servicios— y las torres se levantan con fachadas de ritmo variable, donde ventanas de tonos cálidos y oscuros rompen la monotonía del volumen blanco.',
+    'La esquina arbolada devuelve al peatón un punto de descanso dentro de la manzana, y el podio ordena la convivencia de automóviles y peatones a lo largo de la avenida. El estudio continúa hacia la definición de las plantas tipo y la altura definitiva del conjunto.'
+   ],
+   images:[
+    {file:'imagenes/GENDO_LORENZANA_EXTRAS_3955.png',
+     url:'https://z-cdn-media.chatglm.cn/files/f5fe8ee0-40b8-4761-9b28-235eaccaa78a.png?auth_key=1888974413-e757d3de8078430e93ef9bcad3a7a302-0-f525ff92d17a6bed010ce704ccc7bef8',
+     seed:'if-mariano-a',w:1600,h:1100,cap:'Fig. 01 — Boceto del conjunto desde la avenida'}
+   ]}
+];
+
+const services=[
+  {mod:'01.',t:'Diseño arquitectónico',subs:'04 líneas',
+   d:'Del concepto al proyecto ejecutivo. Una idea clara sostenida hasta el último detalle, con arte y función trazados en el mismo plano.',
+   items:['Concepto y anteproyecto','Proyecto arquitectónico','Memorias de diseño','Presentación al cliente']},
+  {mod:'02.',t:'Residencial y vertical',subs:'04 líneas',
+   d:'Especialidad forjada en desarrolladora: vivienda y torres que entienden de rentabilidad, normativa y detalle constructivo.',
+   items:['Vivienda unifamiliar','Torres residenciales','Programación de amenidades','Integración urbana']},
+  {mod:'03.',t:'Modelado y visualización',subs:'04 líneas',
+   d:'Comunicar el proyecto es parte del proyecto. Modelado 3D, renders y piezas de presentación que defienden la idea ante cualquier interlocutor.',
+   items:['Modelado 3D','Renders y visuales','Láminas de presentación','Documentos de concurso']},
+  {mod:'04.',t:'Documentación técnica',subs:'04 líneas',
+   d:'La parte que sostiene a la bonita: planos, detalles constructivos y coordinación con especialidades, con la disciplina aprendida en obra.',
+   items:['Planos técnicos','Detalles constructivos','Trámites y licencias','Coordinación de especialidades']},
+  {mod:'05.',t:'Estructuras y acero',subs:'04 líneas',
+   d:'Experiencia en ingeniería del acero: coordinar estructura y arquitectura desde el diseño, no como correctivo tardío.',
+   items:['Coordinación estructural','Elementos de acero','Detalle de taller','Interfaz con ingeniería']}
+];
+
+/* =================== Utilidades =================== */
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const mapSvg=document.getElementById('mapSvg');
+if(mapSvg&&innerWidth<760){mapSvg.setAttribute('preserveAspectRatio','xMinYMid slice')}
+
+/* =================== Reloj GDL =================== */
+(function clock(){
+  const fmt=new Intl.DateTimeFormat('es-MX',{timeZone:'America/Mexico_City',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  const tick=()=>{const t=fmt.format(new Date());$$('.clock').forEach(c=>c.textContent=t)};
+  tick();setInterval(tick,1000);
+})();
+
+/* =================== Cursor retícula + ejes cartesianos =================== */
+let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my,gx=0,gy=0,gtx=0,gty=0;
+const dot=$('#cDot'),ring=$('#cRing'),read=$('#cRead');
+const hero=$('#inicio'),guides=$('#guides'),gxEl=$('#gx'),gyEl=$('#gy'),gxT=$('#gxT'),gyT=$('#gyT');
+
+if(fine){
+  addEventListener('mousemove',e=>{
+    mx=e.clientX;my=e.clientY;
+    dot.style.transform=`translate(${mx}px,${my}px) translate(-50%,-50%)`;
+    read.textContent=`${String(Math.round(mx)).padStart(4,'0')} · ${String(Math.round(my)).padStart(4,'0')}`;
+    const r=hero.getBoundingClientRect();
+    if(e.clientY>r.top&&e.clientY<r.bottom){
+      guides.classList.add('on');
+      gtx=e.clientX;gty=e.clientY-r.top;
+    }else{guides.classList.remove('on')}
+  },{passive:true});
+
+  addEventListener('mouseover',e=>{
+    ring.classList.toggle('big',!!e.target.closest('a,button,.svc-head,.work,img[data-lb]'));
+  });
+
+  (function loop(){
+    rx+=(mx-rx)*.16;ry+=(my-ry)*.16;
+    ring.style.transform=`translate(${rx}px,${ry}px) translate(-50%,-50%)`;
+    gx+=(gtx-gx)*.1;gy+=(gty-gy)*.1;
+    gxEl.style.left=gx+'px';gyEl.style.top=gy+'px';
+    gxT.style.left=gx+'px';gyT.style.top=gy+'px';
+    gxT.textContent=`X ${String(Math.round(gx)).padStart(4,'0')}`;
+    gyT.textContent=`Y ${String(Math.round(gy)).padStart(4,'0')}`;
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* =================== Regla lateral: construir ticks =================== */
+(function buildRuler(){
+  const holder=$('#rTicks');
+  for(let i=0;i<=40;i++){
+    const t=document.createElement('span');
+    t.className='r-t'+(i%10===0?' big':'');
+    t.style.top=(i*2.5)+'%';
+    holder.appendChild(t);
+    if(i%10===0){
+      const n=document.createElement('span');
+      n.className='r-n';
+      n.style.top=`calc(${i*2.5}% + 4px)`;
+      n.textContent=String(i*2.5).padStart(4,'0');
+      holder.appendChild(n);
+    }
+  }
+})();
+
+/* =================== Nav + progreso + HUD + regla =================== */
+const nav=$('#nav'),bar=$('#scrollBar'),hudScroll=$('#hudScroll'),rMark=$('#rMark');
+addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>40);
+  const p=scrollY/(document.documentElement.scrollHeight-innerHeight||1);
+  const pct=Math.round(p*100);
+  bar.style.transform=`scaleX(${p})`;
+  hudScroll.textContent=String(pct).padStart(3,'0')+'%';
+  rMark.style.top=`calc(${p*100}% - 1px)`;
+  rMark.dataset.v=String(pct).padStart(3,'0');
+},{passive:true});
+
+const secNames={inicio:'00 · INICIO',sobre:'01 · SOBRE MÍ',proyectos:'02 · PROYECTOS',servicios:'03 · SERVICIOS',trayectoria:'04 · TRAYECTORIA',contacto:'05 · CONTACTO'};
+const secIO=new IntersectionObserver(es=>{
+  es.forEach(en=>{
+    if(en.isIntersecting){
+      const id=en.target.id;
+      $('#hudSec').textContent=secNames[id]||id;
+      $$('.nav-links a').forEach(a=>a.classList.toggle('active',a.dataset.sec===id));
+    }
+  });
+},{rootMargin:'-42% 0px -50% 0px'});
+Object.keys(secNames).forEach(id=>{const s=document.getElementById(id);if(s)secIO.observe(s)});
+
+const mm=$('#mobileMenu');
+ $('#burger').addEventListener('click',()=>{mm.classList.add('open');document.body.style.overflow='hidden'});
+const closeMM=()=>{mm.classList.remove('open');document.body.style.overflow=''};
+ $('#mmClose').addEventListener('click',closeMM);
+ $$('#mobileMenu a').forEach(a=>a.addEventListener('click',closeMM));
+
+const mq=$('#mqTrack');mq.innerHTML+=mq.innerHTML;
+
+function count(el){
+  const t=+el.dataset.count,pad=+el.dataset.pad||0,dur=1400,t0=performance.now();
+  (function st(now){
+    const k=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-k,3);
+    el.textContent=String(Math.round(t*e)).padStart(pad,'0');
+    if(k<1)requestAnimationFrame(st);
+  })(t0);
+}
+const io=new IntersectionObserver(es=>{
+  es.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.classList.add('in');
+      if(en.target.dataset.count!==undefined)count(en.target);
+      io.unobserve(en.target);
+    }
+  });
+},{threshold:.12,rootMargin:'0px 0px -4%'});
+ $$('.reveal,.rule,[data-count]').forEach(el=>io.observe(el));
+
+/* =================== Hero: Inyectar 2 imágenes y crossfade =================== */
+const heroImgs = [
+  {file:'imagenes/contexto-1.png', seed:'if-ctx-1', w:1000, h:900, cap:'Contexto · Vista 01'},
+  {file:'imagenes/contexto-2.png', seed:'if-ctx-2', w:1000, h:900, cap:'Contexto · Vista 02'}
+];
+const heroFrame = document.getElementById('heroFrame');
+heroFrame.insertAdjacentHTML('afterbegin', heroImgs.map(im => ph(im, im.w, im.h, 'Contexto urbano')).join(''));
+const heroImgEls = heroFrame.querySelectorAll('img');
+if(heroImgEls.length > 0){
+  heroImgEls[0].classList.add('on');
+  if(heroImgEls.length > 1){
+    let hIdx = 0;
+    setInterval(() => {
+      heroImgEls[hIdx].classList.remove('on');
+      hIdx = (hIdx + 1) % heroImgEls.length;
+      heroImgEls[hIdx].classList.add('on');
+    }, 4000);
+  }
+}
+
+/* =================== Render: proyectos =================== */
+const arrow=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>`;
+ $('#worksList').innerHTML=projects.map((p,i)=>`
+  <article class="work reveal" data-i="${i}" tabindex="0" role="button" aria-label="Abrir ficha de ${p.name}" style="--d:${(i%3)*.06}s">
+    <span class="w-num">${p.num}</span>
+    <div class="w-info">
+      <h3 class="w-name">${p.name}</h3>
+      <p class="w-tags"><i>${p.type}</i> — ${p.loc}</p>
+    </div>
+    <div class="w-media">
+      ${p.images.map((im,idx)=>ph(im,640,480,p.name+' — lámina '+(idx+1))).join('')}
+      ${p.images.length>1?`<span class="w-lam">${String(p.images.length).padStart(2,'0')} FIG.</span>`:''}
+      <span class="w-xh"></span>
+      <span class="w-br b1"></span><span class="w-br b2"></span><span class="w-br b3"></span><span class="w-br b4"></span>
+      <span class="w-open">VER FICHA →</span>
+    </div>
+    <div class="w-specs">
+      <div class="sp"><span class="k">AÑO</span><span class="v">${p.year}</span></div>
+      <div class="sp"><span class="k">ESCALA</span><span class="v">${p.escala}</span></div>
+      <div class="sp"><span class="k">ESTADO</span><span class="v">${p.status}</span></div>
+    </div>
+    <span class="w-arrow">${arrow}</span>
+  </article>
+`).join('');
+ $$('.w-media').forEach(m=>{const f=m.querySelector('img');if(f)f.classList.add('on')});
+
+const plus=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 5v14M5 12h14"/></svg>`;
+ $('#svcList').innerHTML=services.map((s,i)=>`
+  <div class="svc reveal" style="--d:${i*.05}s">
+    <button class="svc-head" aria-expanded="false">
+      <span class="svc-mod">${s.mod}</span>
+      <h3 class="svc-t">${s.t}</h3>
+      <span class="svc-sub">${s.subs}</span>
+      <span class="svc-ic">${plus}</span>
+    </button>
+    <div class="svc-body"><div class="svc-inner"><div class="svc-pad">
+      <p>${s.d}</p>
+      <ul>${s.items.map((it,j)=>`<li><i>${String(j+1).padStart(2,'0')}</i>${it}</li>`).join('')}</ul>
+    </div></div></div>
+  </div>
+`).join('');
+
+ $$('.svc-head').forEach(h=>h.addEventListener('click',()=>{
+  const item=h.parentElement,was=item.classList.contains('open');
+  $$('.svc').forEach(s=>{s.classList.remove('open');s.querySelector('.svc-head').setAttribute('aria-expanded','false')});
+  if(!was){item.classList.add('open');h.setAttribute('aria-expanded','true')}
+}));
+
+/* =================== Modal =================== */
+const modal=$('#modal'),mBody=$('#mBody'),mPanel=$('#mPanel');
+const TOTAL=projects.length;
+let cur=0;
+
+function renderModal(i){
+  cur=i;const p=projects[i],n=String(i+1).padStart(2,'0');
+  $('#mFile').textContent=`FICHA ${p.num} / 0${TOTAL}`;
+  $('#mCount').textContent=`${n} / 0${TOTAL}`;
+  const gals=p.images.slice(1);
+  const galCls=gals.length===1?' single':gals.length===2?' duo':'';
+  const gal=gals.length
+    ?`<div class="m-gal${galCls}">${gals.map((im,j)=>`<figure class="${im.h>im.w?'tall':''}">${ph(im,im.w,im.h,p.name,`data-lb="${j+1}"`)}<figcaption>${im.cap}</figcaption></figure>`).join('')}</div>`
+    :'';
+  mBody.innerHTML=`
+    <figure class="m-hero">
+      ${ph(p.images[0],p.images[0].w,p.images[0].h,p.name+' — vista principal','data-lb="0"')}
+      <span class="w-br b1"></span><span class="w-br b2"></span><span class="w-br b3"></span><span class="w-br b4"></span>
+      <span class="m-fig">${p.images[0].cap}</span>
+      <span class="m-zoom">AMPLIAR
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      </span>
+    </figure>
+    <div class="m-head">
+      <h2 class="m-title">${p.name}</h2>
+      <p class="m-lead">${p.lead}</p>
+    </div>
+    <dl class="m-meta">
+      <div><dt class="k">Tipología</dt><dd class="v">${p.type}</dd></div>
+      <div><dt class="k">Ubicación</dt><dd class="v">${p.loc}</dd></div>
+      <div><dt class="k">Año</dt><dd class="v">${p.year}</dd></div>
+      <div><dt class="k">Escala</dt><dd class="v">${p.escala}</dd></div>
+      <div><dt class="k">Cliente</dt><dd class="v">${p.client}</dd></div>
+      <div><dt class="k">Estado</dt><dd class="v">${p.status}</dd></div>
+    </dl>
+    <div class="m-text">${p.body.map(t=>`<p>${t}</p>`).join('')}<p class="lim">— LESS IS MORE —</p></div>
+    ${gal}
+    <a class="m-cta" href="#contacto" data-close>Iniciar conversación ${arrow}</a>`;
+  mPanel.scrollTop=0;
+}
+function openModal(i){renderModal(i);modal.classList.add('open');document.body.style.overflow='hidden';$('#mClose').focus()}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+
+ $$('.work').forEach(row=>{
+  const thumbs=[...row.querySelectorAll('.w-media img')];
+  let tIdx=0,tTimer=null;
+  if(thumbs.length>1){
+    row.addEventListener('mouseenter',()=>{
+      clearInterval(tTimer);
+      tTimer=setInterval(()=>{
+        thumbs[tIdx].classList.remove('on');
+        tIdx=(tIdx+1)%thumbs.length;
+        thumbs[tIdx].classList.add('on');
+      },900);
+    });
+    row.addEventListener('mouseleave',()=>{
+      clearInterval(tTimer);
+      thumbs.forEach(t=>t.classList.remove('on'));
+      tIdx=0;thumbs[0].classList.add('on');
+    });
+  }
+  row.addEventListener('click',()=>openModal(+row.dataset.i));
+  row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openModal(+row.dataset.i)}});
+});
+ $('#mClose').addEventListener('click',closeModal);
+ $('#mPrev').addEventListener('click',()=>renderModal((cur-1+TOTAL)%TOTAL));
+ $('#mNext').addEventListener('click',()=>renderModal((cur+1)%TOTAL));
+modal.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeModal()});
+
+/* =================== Visor de luz (lightbox) =================== */
+const lb=$('#lb');
+let lbP=0,lbCur=0;
+
+function renderLb(){
+  const p=projects[lbP],im=p.images[lbCur];
+  const ref=mBody.querySelector(`img[data-lb="${lbCur}"]`);
+  $('#lbImg').src=ref?ref.src:(im.url||im.file||fb(im,im.w,im.h));
+  $('#lbImg').alt=im.cap||p.name;
+  $('#lbCap').textContent=im.cap;
+  $('#lbCount').textContent=`${String(lbCur+1).padStart(2,'0')} / ${String(p.images.length).padStart(2,'0')}`;
+  $('#lbFile').textContent=`${p.name} — FICHA ${p.num}`;
+}
+function openLb(idx){lbP=cur;lbCur=idx;renderLb();lb.classList.add('open')}
+function closeLb(){lb.classList.remove('open')}
+function lbNav(d){const p=projects[lbP];lbCur=(lbCur+d+p.images.length)%p.images.length;renderLb()}
+
+ $('#lbClose').addEventListener('click',closeLb);
+ $('#lbBack').addEventListener('click',closeLb);
+ $('#lbPrev').addEventListener('click',()=>lbNav(-1));
+ $('#lbNext').addEventListener('click',()=>lbNav(1));
+
+mBody.addEventListener('click',e=>{
+  const im=e.target.closest('img[data-lb]');
+  if(im)openLb(+im.dataset.lb);
+});
+
+addEventListener('keydown',e=>{
+  if(lb.classList.contains('open')){
+    if(e.key==='Escape')closeLb();
+    if(e.key==='ArrowLeft')lbNav(-1);
+    if(e.key==='ArrowRight')lbNav(1);
+    return;
+  }
+  if(!modal.classList.contains('open'))return;
+  if(e.key==='Escape')closeModal();
+  if(e.key==='ArrowLeft')renderModal((cur-1+TOTAL)%TOTAL);
+  if(e.key==='ArrowRight')renderModal((cur+1)%TOTAL);
+});
+
+/* =================== Toast =================== */
+const toastEl=$('#toast');let toastT;
+function toast(msg){
+  toastEl.textContent=msg;toastEl.classList.add('show');
+  clearTimeout(toastT);toastT=setTimeout(()=>toastEl.classList.remove('show'),3800);
+}
+
+ $('#copyMail').addEventListener('click',e=>{
+  e.preventDefault();
+  const mail='ianfr.contacto@gmail.com';
+  if(navigator.clipboard?.writeText){
+    navigator.clipboard.writeText(mail)
+      .then(()=>toast('Correo copiado al portapapeles'))
+      .catch(()=>toast('Escríbeme a ianfr.contacto@gmail.com'));
+  }else toast('Escríbeme a ianfr.contacto@gmail.com');
+});
+
+const form=$('#ctForm');
+const setValid=(id,ok)=>{$(id).classList.toggle('invalid',!ok);return ok};
+['#inName','#inMail','#inMsg'].forEach(s=>$(s).addEventListener('input',e=>e.target.closest('.field').classList.remove('invalid')));
+ $('#inType').addEventListener('change',e=>e.target.closest('.field').classList.remove('invalid'));
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const okN=setValid('#fName',$('#inName').value.trim().length>1);
+  const okM=setValid('#fMail',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test($('#inMail').value.trim()));
+  const okT=setValid('#fType',$('#inType').value!=='');
+  const okG=setValid('#fMsg',$('#inMsg').value.trim().length>=10);
+  if(!(okN&&okM&&okT&&okG)){toast('Revisa los campos marcados');return}
+  const btn=$('#btnSend'),label=$('#sendLabel');
+  btn.disabled=true;label.textContent='TRANSMITIENDO…';
+  setTimeout(()=>{
+    btn.disabled=false;label.textContent='TRANSMITIR MENSAJE';
+    form.reset();
+    toast('Mensaje recibido. Te respondo en un máximo de 48 horas.');
+  },1100);
+});
+
+ $('#year').textContent=new Date().getFullYear();
+document.body.classList.add('booted');
+</script>
+</body>
+</html>
