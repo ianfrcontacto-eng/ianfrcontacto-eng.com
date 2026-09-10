@@ -1661,6 +1661,27 @@ form.addEventListener('submit',e=>{
 
  $('#year').textContent=new Date().getFullYear();
 document.body.classList.add('booted');
-</script>
+/* ═══ REPARACIÓN — secciones proyectos/servicios invisibles ═══ */
+const ioFix=new IntersectionObserver(es=>{
+  es.forEach(en=>{
+    if(en.isIntersecting){
+      en.target.classList.add('in');
+      if(en.target.dataset.count!==undefined)count(en.target);
+      ioFix.unobserve(en.target);
+    }
+  });
+},{threshold:.08,rootMargin:'0px 0px -2%'});
+ $$('.reveal,.rule,[data-count]').forEach(el=>{
+  if(!el.classList.contains('in'))ioFix.observe(el);
+});
+/* Red de seguridad: revela cualquier elemento atascado en pantalla */
+setTimeout(()=>{
+  $$('.reveal,.rule').forEach(el=>{
+    const r=el.getBoundingClientRect();
+    if(!el.classList.contains('in')&&r.top<innerHeight&&r.bottom>0){
+      el.classList.add('in');
+    }
+  });
+},2000);</script>
 </body>
 </html>
